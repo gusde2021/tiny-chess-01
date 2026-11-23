@@ -10,6 +10,7 @@ The strongest chess engine that fits in at most 4,096 bytes of Python (this entr
 - **Self-Contained Python 3:** Standard library only; no build step, no dependencies, and no other files are read by `main.py`. The engine source is packed with `lzma` + `base85` and unpacked at startup.
 - **Search & Evaluation:** Negamax alpha-beta search with quiescence search, a transposition table, piece-square-table evaluation with a bishop-pair bonus, and MVV-LVA capture ordering.
 - **Determinism:** Uses a fixed node budget (12,000 nodes per move) so play is fully deterministic — no wall clock is ever read.
+- **Practice Trial Verification:** Verified over a full 6-game practice trial, completing every move inside the env's 10-second limit.
 
 ## How it plays
 The program communicates with the make.fun environment over HTTP (`MAKEFUN_ENV_URL`), fetching game states and posting UCI moves until the trial concludes.
